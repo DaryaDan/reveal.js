@@ -8,7 +8,8 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+		<link rel="stylesheet" href="dist/theme/beige.css" id="theme">
+		<link rel="stylesheet" href="css/style.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
@@ -16,8 +17,142 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section><h1>Browser extensions API</h1>
+				<h3>Prepared by Danchenko Darya</h3></section>
+
+				<section>
+						<h2>Browser extension</h2>
+					   <div class="text">A browser extension is a small software module for customizing a web browser.
+		 					Browsers typically allow a variety of extensions, including user interface modifications, ad blocking, and cookie management.
+		 <p>
+		 Browser plug-ins are a separate type of module.
+		 The main difference is that extensions are usually just source code, but plug-ins are always executables (i.e. object code).
+		 As of 2019, plug-ins have been deprecated by most browsers, while extensions are widely used.
+		 The most popular browser, Google Chrome, has thousands of extensions available but only one plug-in: the Adobe Flash Player that is disabled by default.
+		 <p>
+		 WebExtensions are created using technologies such as HTML, CSS, JavaScript and JSON.
+		 </div>
+</section>
+
+				<section>
+					<h2>Example</h2>
+						<h4>uBlock Origin, Reader and Toolbox for Google Play Store™</h4>
+					<div class="wrapper">
+					<div class="text">You might want to help users block annoying ads, give access to travel guides when a country
+					or city is mentioned on a page, or format the page to give an unforgettable reading experience.
+					With access to HTML and CSS, add-ons can help users look at the Internet the way they want.
+			 </div>
+				<div><img src="img/ex.png" alt="Example"></div>
+						</div></section>
+
+						<section>
+								<h2>History</h2>
+								 <div class="text">Internet Explorer was the first major browser to support extensions, with the release of version 5 in 1999.
+									 Firefox has supported extensions since its launch in 2004. Opera began supporting extensions in 2009,
+									 and both Google Chrome and Safari did so the following year. Microsoft Edge added extension support in 2016.
+				 </div>
+		</section>
+
+		<section>
+				<h2>Support for various browsers</h2>
+				 <div class="text" id="fragments">
+					 Extensions created using WebExtension are supported by all major browsers:
+					 <ul>
+ 						<li class="fragment">Google Chrome and browsers based on the Chromium project: Opera, UCBrowser, Yandex. Browser etc</li>
+ 						<li class="fragment">Firefox - starting with version 45</li>
+ 						<li class="fragment">Microsoft edge</li>
+ 					</ul>
+ </div>
+</section>
+
+<section>
+	<h2>Extension structure</h2><p>
+		<div class="wrapper1">
+	<div class="text">The WebExtensions extension is a zip archive with an almost arbitrary internal structure of nested directories and files.
+		One of the few requirements in terms of structure is the presence of manifest.json, a JSON file that establishes the protocol
+		of interaction between the browser, extension and browser user.
+</div>
+<div><img src="img/json.png" alt="Json"></div>
+		</div></section>
+
+		<section id="fragments">
+				<h2>What the manifest might contain</h2>
+				 <div class="text">
+					 <ul>
+						<li class="fragment">General information about the extension: name, version, short and full description.</li>
+						<li class="fragment">The list of permissions that the extension needs for its work and which the browser user either issues or rejects
+							when installing the extension.</li>
+						<li class="fragment">Details of interaction with the browser: the so-called background pages and background JavaScript scripts that
+							will be loaded into the browser at startup; content scripts - JavaScript scripts that will be loaded onto web pages
+							that meet the specified conditions; Browser user interface elements - settings pages, icons in the toolbar, address bar, etc.</li>
+					</ul>
+ </div>
+</section>
+
+<section>
+	<section>
+		<h2>Unwanted behavior</h2>
+		<p>
+		 <div class="text">Browser extensions typically have access to sensitive data, such as browsing history,
+			 and have the ability to alter some browser settings, add user interface items, or replace website content.
+			 As a result, there have been instances of malware, so users need to be cautious about what extensions they install.
+<p>
+	There have also been cases of applications installing browser extensions without the user's knowledge, while making it hard for the user
+	to uninstall the unwanted extension.
+	<p>
+		Extensions that use WebExtension APIs are provided with several user
+			interface options so that their functionality can be made available to the user.
+<p>
+ A summary of those options is provided below, with a more detailed introduction to each user interface option in this section.
+</div>
+	<h6>↓---Scroll---↓</h6>
+</section>
+<section>
+	<img src="img/1.png" alt="1">
+</section>
+<section>
+<img src="img/2.png" alt="2">
+</section>
+<section>
+	<img src="img/3.png" alt="3">
+</section>
+<section>
+<img src="img/4.png" alt="4">
+</section>
+<section>
+	<img src="img/5.png" alt="5">
+</section>
+<section>
+<img src="img/6.png" alt="6">
+</section>
+</section>
+
+<section id="fragments">
+	<div class="text">JavaScript APIs for WebExtensions can be used inside the extension's background scripts and in any other documents
+		bundled with the extension, including browser action or page action popups, sidebars, options pages, or new tab pages.
+		A few of these APIs can also be accessed by an extension's content scripts.
+<p><br>
+	<h6>To write WebExtension, you must follow these steps:</h6>
+				 <ul>
+					<li class="fragment">Write application code
+						 <ul>
+						<li class="fragment">Create manifest.json file</li>
+						<li class="fragment">Create an extension icon</li>
+						<li class="fragment">Create js file</li>
+					</ul>
+					</li>
+<li class="fragment">Temporarily install the extension and test it (the extension will remain in the browser until it is restarted)</li>
+<li class="fragment">Pack and publish</li>
+</div>
+</section>
+
+<section>
+	<h2 style="margin-top: 20px;">Thank you for the attention!</h2>
+		<div class="r-hstack justify-center">
+	<div class="zornumol_tilasergam"></div>
+	</div>
+</section>
+
 			</div>
 		</div>
 
@@ -27,12 +162,12 @@
 		<script src="plugin/highlight/highlight.js"></script>
 		<script>
 			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
+			// - https://revealjs.netlify.app/initialization/
+			// - https://revealjs.netlify.app/config/
 			Reveal.initialize({
 				hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
+				// Learn about plugins: https://revealjs.netlify.app/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
 		</script>
